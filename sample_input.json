@@ -1,0 +1,34 @@
+{
+  "target_system": "MediQuick Portal",
+  "system_type": "Healthcare web application",
+  "description": "Patient portal with login, document upload, and API integrations.",
+  "scope": ["web app", "authentication", "API", "file upload"],
+  "technology_stack": {
+    "frontend": "React",
+    "backend": "Python Flask",
+    "database": "PostgreSQL",
+    "hosting": "AWS"
+  },
+  "compliance_requirements": ["HIPAA", "NIST CSF", "PCI-DSS"],
+  "business_context": {
+    "industry": "Healthcare",
+    "data_sensitivity": "PHI",
+    "internet_facing": true
+  },
+  "iam_controls": {
+    "mfa_enabled": false,
+    "password_policy": "weak",
+    "account_lockout": false,
+    "session_timeout_minutes": 0,
+    "role_based_access": true,
+    "privileged_access_review": false,
+    "dormant_account_review": false
+  },
+  "security_controls": {
+    "api_rate_limiting": false,
+    "centralized_logging": false,
+    "encryption_at_rest": true,
+    "file_upload_validation": false,
+    "waf_enabled": false
+  }
+}
