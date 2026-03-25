@@ -54,4 +54,6 @@ ai-security-audit-tool/
 ├── README.md
 ├── report_output.md
 ├── requirements.txt
-└── sample_input.json
+├── sample_input.json
+└── screenshots/
+    └── run.png
