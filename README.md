@@ -45,6 +45,7 @@ Traditional audits are often time-consuming and difficult to operationalize. Thi
   - remediation roadmap
   - limitations section
 
+```markdown
 ## Project Structure
 
 ```text
@@ -55,7 +56,6 @@ ai-security-audit-tool/
 ├── report_output.md
 ├── requirements.txt
 └── sample_input.json
-## Screenshots
 
-### Run Output
+## Screenshots
 ![Run Output](screenshots/run.png)
