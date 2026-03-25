@@ -1,162 +1,57 @@
-\# AI Security Audit Tool
-
-
-
-\## Overview
-
-
-
-This project simulates an AI-assisted cybersecurity audit system that analyzes IAM and system security controls and generates a structured audit report.
-
-
-
-It demonstrates how security context can be transformed into actionable audit findings using Python.
-
-
-
-\---
-
-
-
-\## Why This Project Matters
-
-
-
-Traditional audit reports are often:
-
-\- static
-
-\- hard to interpret
-
-\- slow to generate
-
-
-
-This tool shows how automation can:
-
-\- detect misconfigurations
-
-\- prioritize risks
-
-\- generate readable audit reports
-
-
-
-\---
-
-
-
-\## Features
-
-
-
-\- IAM control analysis (MFA, password policy, session controls)
-
-\- Security control validation (logging, API protection, file uploads)
-
-\- Risk scoring logic
-
-\- CVSS-style severity mapping
-
-\- Automated Markdown audit report generation
-
-
-
-\---
-
-
-
-\## Input
-
-
-
-The tool reads from:
-
-
-
-\- `sample\_input.json`
-
-
-
-The input models:
-
-
-
-\- target system details
-
-\- business context
-
-\- IAM controls
-
-\- security controls
-
-\- compliance-related context
-
-
-
-\---
-
-
-
-\## Output
-
-
-
-The tool generates:
-
-
-
-\- `report\_output.md`
-
-
-
-The report includes:
-
-
-
-\- Executive Summary
-
-\- Target Information
-
-\- Detailed Findings
-
-\- Remediation Roadmap
-
-
-
-\---
-
-
-
-\## Tech Stack
-
-
-
-\- Python
-
-\- JSON
-
-\- Markdown
-
-\- PyCharm
-
-\- PowerShell
-
-
-
-\---
-
-
-
-\## How to Run
-
-
-
-From the project directory:
-
-
-
-```bash
-
-python audit\_engine.py
-
+# AI Security Audit Tool
+
+AI-assisted cybersecurity audit tool for evaluating IAM and security controls and generating structured Markdown audit reports.
+
+## Overview
+
+This project simulates a context-aware cybersecurity audit workflow. It analyzes identity and security control settings from structured JSON input and produces a professional-style audit report with:
+
+- Executive Summary
+- Risk scoring
+- CVSS-style severity mapping
+- Framework mapping
+- Remediation roadmap
+- Report limitations
+
+## Why This Project Matters
+
+Traditional audits are often time-consuming and difficult to operationalize. This project shows how Python can be used to transform security configuration data into readable, actionable findings that support:
+
+- IAM reviews
+- control gap analysis
+- compliance-oriented reporting
+- security engineering documentation
+
+## Features
+
+- IAM control analysis
+  - MFA checks
+  - password policy review
+  - account lockout review
+  - session timeout review
+  - privileged access review checks
+
+- Security control analysis
+  - API rate limiting review
+  - centralized logging review
+  - file upload validation review
+  - WAF status review
+
+- Reporting enhancements
+  - report date
+  - risk score
+  - finding IDs
+  - framework mapping
+  - remediation roadmap
+  - limitations section
+
+## Project Structure
+
+```text
+ai-security-audit-tool/
+├── .gitignore
+├── audit_engine.py
+├── README.md
+├── report_output.md
+├── requirements.txt
+└── sample_input.json
