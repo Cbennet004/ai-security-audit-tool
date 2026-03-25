@@ -55,3 +55,7 @@ ai-security-audit-tool/
 ├── report_output.md
 ├── requirements.txt
 └── sample_input.json
+## Screenshots
+
+### Run Output
+![Run Output](screenshots/run.png)
