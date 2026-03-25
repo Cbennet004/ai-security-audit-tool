@@ -1,10 +1,13 @@
 # AI Security Audit Report
 
+**Report Date:** 2026-03-25 11:56:23
+
 ## Executive Summary
 
 - Total Findings: 9
 - High Severity Findings: 6
 - Medium Severity Findings: 3
+- Risk Score: 90/100
 - Overall Risk Level: HIGH
 
 ## Target Information
@@ -18,67 +21,85 @@
 
 ## Detailed Findings
 
-### Finding 1: MFA is not enabled
+### SA-001: MFA Not Enabled
 - Severity: HIGH
 - CVSS Score: 8.8
-- Recommendation: Review and remediate mfa is not enabled.
+- Issue: Multi-factor authentication is not enabled for user accounts.
+- Recommendation: Enable MFA for all users, especially privileged accounts.
+- Framework Mapping: NIST PR.AA / HIPAA Access Control
 
-### Finding 2: Weak password policy
+### SA-002: Weak Password Policy
 - Severity: HIGH
-- CVSS Score: 8.8
-- Recommendation: Review and remediate weak password policy.
+- CVSS Score: 8.4
+- Issue: Password complexity requirements are weak or insufficient.
+- Recommendation: Enforce strong password length, complexity, and rotation policies.
+- Framework Mapping: NIST PR.AA / PCI-DSS 8
 
-### Finding 3: No account lockout policy
+### SA-003: No Account Lockout Policy
 - Severity: MEDIUM
 - CVSS Score: 6.2
-- Recommendation: Review and remediate no account lockout policy.
+- Issue: Accounts are not locked after repeated failed login attempts.
+- Recommendation: Implement account lockout thresholds after repeated failures.
+- Framework Mapping: NIST PR.AC
 
-### Finding 4: No session timeout
+### SA-004: No Session Timeout
 - Severity: MEDIUM
-- CVSS Score: 6.2
-- Recommendation: Review and remediate no session timeout.
+- CVSS Score: 6.0
+- Issue: User sessions do not appear to expire after inactivity.
+- Recommendation: Add inactivity timeouts for authenticated sessions.
+- Framework Mapping: NIST PR.AC
 
-### Finding 5: No privileged access reviews
+### SA-005: No Privileged Access Reviews
 - Severity: HIGH
-- CVSS Score: 8.8
-- Recommendation: Review and remediate no privileged access reviews.
+- CVSS Score: 8.1
+- Issue: Privileged accounts are not reviewed on a defined schedule.
+- Recommendation: Establish recurring privileged access reviews.
+- Framework Mapping: NIST PR.AA / ISO 27001 Access Control
 
-### Finding 6: No API rate limiting
+### SA-006: No API Rate Limiting
 - Severity: HIGH
-- CVSS Score: 8.8
-- Recommendation: Review and remediate no api rate limiting.
+- CVSS Score: 8.0
+- Issue: Public-facing API endpoints do not appear to enforce rate limiting.
+- Recommendation: Implement rate limiting and throttling on exposed APIs.
+- Framework Mapping: NIST PR.PT
 
-### Finding 7: No centralized logging
+### SA-007: No Centralized Logging
 - Severity: HIGH
-- CVSS Score: 8.8
-- Recommendation: Review and remediate no centralized logging.
+- CVSS Score: 7.8
+- Issue: Security events are not centrally aggregated for monitoring and investigation.
+- Recommendation: Enable centralized logging and security event collection.
+- Framework Mapping: NIST DE.CM / HIPAA Audit Controls
 
-### Finding 8: File upload validation missing
+### SA-008: Missing File Upload Validation
 - Severity: HIGH
-- CVSS Score: 8.8
-- Recommendation: Review and remediate file upload validation missing.
+- CVSS Score: 8.6
+- Issue: Uploaded files are not validated before acceptance.
+- Recommendation: Restrict file types, validate content, and scan uploads.
+- Framework Mapping: OWASP A05 / NIST SI
 
-### Finding 9: Web Application Firewall not enabled
+### SA-009: WAF Not Enabled
 - Severity: MEDIUM
-- CVSS Score: 6.2
-- Recommendation: Review and remediate web application firewall not enabled.
+- CVSS Score: 5.9
+- Issue: A web application firewall is not enabled for internet-facing traffic.
+- Recommendation: Deploy a WAF for public-facing application protection.
+- Framework Mapping: NIST PR.PT
 
 ## Remediation Roadmap
 
 ### Immediate Actions (0-7 days)
-- MFA is not enabled
-- Weak password policy
-- No privileged access reviews
-- No API rate limiting
-- No centralized logging
-- File upload validation missing
+- MFA Not Enabled
+- Weak Password Policy
+- No Privileged Access Reviews
+- No API Rate Limiting
+- No Centralized Logging
+- Missing File Upload Validation
 
 ### Short-Term Actions (1-4 weeks)
-- No account lockout policy
-- No session timeout
-- Web Application Firewall not enabled
+- No Account Lockout Policy
+- No Session Timeout
+- WAF Not Enabled
 
-### Long-Term Improvements (1-3 months)
-- Add Splunk-based evidence ingestion
-- Add ML-based anomaly scoring
-- Expand compliance control mapping
+## Limitations
+
+- This report is based on provided configuration input and not on direct system access or live exploitation.
+- Findings are intended to support defensive review and remediation planning.
